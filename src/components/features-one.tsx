@@ -1,4 +1,4 @@
-import { Card } from '@/components/ui/card'
+// import { Card } from '@/components/ui/card'
 import Image from 'next/image'
 
 export default function Features() {
@@ -23,7 +23,7 @@ export default function Features() {
                     <div className="border-foreground/10 relative mt-16 grid gap-12 border-b pb-12 [--radius:1rem] md:grid-cols-2">
                         <div>
                             <h3 className="text-foreground text-xl font-semibold">Find the right answer before even asking</h3>
-                            <p className="text-muted-foreground my-4 text-lg">Slice brings you the most relevant docs and insights to answer clients' questions.</p>
+                            <p className="text-muted-foreground my-4 text-lg">Slice brings you the most relevant docs and insights to answer clients&apos; questions.</p>
                             <div className="aspect-video overflow-hidden bg-foreground/5 rounded-xl p-4">
                                 <Image
                                     src="/images/resourcess.png"
@@ -36,7 +36,7 @@ export default function Features() {
                         </div>
                         <div>
                             <h3 className="text-foreground text-xl font-semibold">Assign and track internal work</h3>
-                            <p className="text-muted-foreground my-4 text-lg">Slice sends the messages and follows up with internal teams, so you don't have to.</p>
+                            <p className="text-muted-foreground my-4 text-lg">Slice sends the messages and follows up with internal teams, so you don&apos;t have to.</p>
                             <div className="aspect-video overflow-hidden bg-foreground/5 rounded-xl p-4">
                                 <Image
                                     src="/images/steps.png"
