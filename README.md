@@ -1,36 +1,98 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# LandingSlice
 
-## Getting Started
+A modern landing page for Slice with waitlist functionality.
 
-First, run the development server:
+## Features
+
+- 🎨 Modern design with shadcn/ui components
+- 📝 Professional waitlist form with validation
+- 📧 Email notifications via Resend
+- 🔥 Toast notifications
+- ⚡ Optimized performance (no hydration errors)
+- 📱 Fully responsive design
+
+## Tech Stack
+
+- **Framework:** Next.js 15 with App Router
+- **Styling:** Tailwind CSS
+- **UI Components:** shadcn/ui
+- **Forms:** React Hook Form + Zod validation
+- **Email:** Resend API
+- **Notifications:** Sonner (toast)
+- **Icons:** Lucide React
+
+## Environment Variables
+
+For the waitlist email functionality to work, you need to set up the following environment variable:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+RESEND_API_KEY=your_resend_api_key_here
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Local Development
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+1. Create a `.env.local` file in the root directory
+2. Add your Resend API key:
+```bash
+RESEND_API_KEY=re_your_actual_api_key_here
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Vercel Deployment
 
-## Learn More
+1. Go to your Vercel project settings
+2. Navigate to "Environment Variables"
+3. Add the following variable:
+   - **Name:** `RESEND_API_KEY`
+   - **Value:** `re_C3tVgmTN_FbFCnDsjAhzHvg3WrKBGFWRi`
+   - **Environments:** Production, Preview, Development
 
-To learn more about Next.js, take a look at the following resources:
+## Quick Deploy to Vercel
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/PmFevelat/landingslice&env=RESEND_API_KEY&envDescription=Resend%20API%20key%20for%20email%20notifications&envLink=https://resend.com/api-keys)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Or manual deployment:
 
-## Deploy on Vercel
+1. Push your code to GitHub
+2. Connect your GitHub repo to Vercel
+3. Add the `RESEND_API_KEY` environment variable
+4. Deploy!
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Development
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```bash
+npm install
+npm run dev
+```
+
+Open [http://localhost:3000](http://localhost:3000) with your browser.
+
+## Project Structure
+
+```
+src/
+├── app/
+│   ├── api/waitlist/route.ts    # Email API endpoint
+│   ├── waitlist/page.tsx        # Waitlist form page
+│   ├── layout.tsx              # Root layout
+│   └── page.tsx                # Home page
+├── components/
+│   ├── ui/                     # shadcn/ui components
+│   ├── simple-header.tsx       # Navigation header
+│   ├── hero-section-four.tsx   # Hero section
+│   ├── features-one.tsx        # Features section
+│   ├── integrations-two.tsx    # Integrations section
+│   ├── call-to-action-one.tsx  # CTA section
+│   └── footer-one.tsx          # Footer section
+└── lib/
+    └── utils.ts                # Utility functions
+```
+
+## Email Configuration
+
+The app sends waitlist notifications to: `pierre-marie.fevelat@hec.edu`
+
+To change the recipient email, modify the `to` field in `src/app/api/waitlist/route.ts`.
+
+## License
+
+MIT
