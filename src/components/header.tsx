@@ -25,11 +25,61 @@ export const HeroHeader = () => {
         window.addEventListener('scroll', handleScroll)
         return () => window.removeEventListener('scroll', handleScroll)
     }, [])
+    if (!mounted) {
+        return (
+            <header>
+                <nav className="fixed z-20 w-full transition-all duration-300">
+                    <div className="mx-auto max-w-5xl px-6">
+                        <div className="relative flex flex-wrap items-center justify-between gap-6 py-3 lg:gap-0">
+                            <div className="flex w-full justify-between gap-6 lg:w-auto">
+                                <Link
+                                    href="/"
+                                    aria-label="home"
+                                    className="flex items-center space-x-2">
+                                    <Logo />
+                                </Link>
+                                
+                                <div className="m-auto hidden size-fit lg:block">
+                                    <ul className="flex gap-1">
+                                        {menuItems.map((item, index) => (
+                                            <li key={index}>
+                                                <Button
+                                                    asChild
+                                                    variant="ghost"
+                                                    size="sm">
+                                                    <Link
+                                                        href={item.href}
+                                                        className="text-base">
+                                                        <span>{item.name}</span>
+                                                    </Link>
+                                                </Button>
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div className="hidden lg:flex lg:w-fit lg:gap-6">
+                                <Button
+                                    asChild
+                                    size="sm">
+                                    <Link href="#">
+                                        <span>Request Demo</span>
+                                    </Link>
+                                </Button>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+            </header>
+        )
+    }
+
     return (
         <header>
             <nav
                 data-state={menuState && 'active'}
-                className={cn('fixed z-20 w-full transition-all duration-300', mounted && isScrolled && 'bg-background/75 border-b border-black/5 backdrop-blur-lg')}>
+                className={cn('fixed z-20 w-full transition-all duration-300', isScrolled && 'bg-background/75 border-b border-black/5 backdrop-blur-lg')}>
                 <div className="mx-auto max-w-5xl px-6">
                     <div className="relative flex flex-wrap items-center justify-between gap-6 py-3 lg:gap-0">
                         <div className="flex w-full justify-between gap-6 lg:w-auto">
@@ -86,7 +136,7 @@ export const HeroHeader = () => {
                                 <Button
                                     asChild
                                     size="sm"
-                                    className={cn(mounted && isScrolled && 'lg:hidden')}>
+                                    className={cn(isScrolled && 'lg:hidden')}>
                                     <Link href="#">
                                         <span>Request Demo</span>
                                     </Link>
@@ -94,7 +144,7 @@ export const HeroHeader = () => {
                                 <Button
                                     asChild
                                     size="sm"
-                                    className={cn(mounted && isScrolled ? 'lg:inline-flex' : 'hidden')}>
+                                    className={cn(isScrolled ? 'lg:inline-flex' : 'hidden')}>
                                     <Link href="#">
                                         <span>Request Demo</span>
                                     </Link>

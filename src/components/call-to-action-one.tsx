@@ -12,7 +12,7 @@ export default function StatsSection() {
                             <Button
                                 asChild
                                 size="lg">
-                                <Link href="#">Join the waitlist</Link>
+                                <Link href="/waitlist">Join the waitlist</Link>
                             </Button>
                         </div>
                     </div>

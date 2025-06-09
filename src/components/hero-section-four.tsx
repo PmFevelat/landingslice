@@ -1,14 +1,13 @@
 import React from 'react'
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'
-import { HeroHeader } from './header'
-import { ArrowUp, Globe, Plus, Sparkle } from 'lucide-react'
-import Image from 'next/image'
+import { SimpleHeader } from './simple-header'
+
 
 export default function HeroSection() {
     return (
         <>
-            <HeroHeader />
+            <SimpleHeader />
             <main className="[--color-primary:var(--color-indigo-500)]">
                 <section className="overflow-hidden">
                     <div className="py-20 md:py-36">
@@ -22,7 +21,7 @@ export default function HeroSection() {
                                     <Button
                                         asChild
                                         size="lg">
-                                        <Link href="#link">
+                                        <Link href="/waitlist">
                                             <span className="text-nowrap">Join the waitlist</span>
                                         </Link>
                                     </Button>
