@@ -22,9 +22,6 @@ const plusJakartaSans = Plus_Jakarta_Sans({
 export const metadata: Metadata = {
   title: "Slice - AI-Powered Call Analysis Platform",
   description: "Transform your calls into structured insights with Slice. AI-powered transcription, analysis, and action tracking for sales and customer success teams.",
-  icons: {
-    icon: '/favicon.ico',
-  },
 };
 
 export default function RootLayout({
