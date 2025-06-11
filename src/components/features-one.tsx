@@ -101,7 +101,7 @@ export default function Features() {
                         </div>
                         <div>
                             <h3 className="text-foreground text-xl font-semibold">Send the perfect follow-up in seconds</h3>
-                            <p className="text-muted-foreground my-4 text-base">Slice bundles a clear recap and AI-drafted answers to every client question—ready to hit "Send."</p>
+                            <p className="text-muted-foreground my-4 text-base">Slice bundles a clear recap and AI-drafted answers to every client question—ready to hit &quot;Send.&quot;</p>
                             <div className="aspect-video overflow-hidden rounded-xl p-4 relative">
                                 <Image
                                     src="/images/grid/rose.png"
