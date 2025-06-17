@@ -53,7 +53,7 @@ export default function Features() {
 
                     <div className="mt-16">
                         <h2 className="text-foreground text-4xl font-semibold">Go beyond meetings. Deliver moments.</h2>
-                        <p className="text-muted-foreground mb-12 mt-4 text-lg">Slice allows you to surface the little things — like your client's passion for tennis — and gives you the tools to act on them creatively: search web, attach content, make it personal.</p>
+                        <p className="text-muted-foreground mb-12 mt-4 text-lg">Slice allows you to surface the little things — like your client&apos;s passion for tennis — and gives you the tools to act on them creatively: search web, attach content, make it personal.</p>
                         <div className="bg-foreground/5 rounded-3xl p-6">
                             <Image
                                 src="/images/personalised.png"
